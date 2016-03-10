@@ -71,15 +71,25 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">&nbsp;</div>
+      <div class="navbar navbar-inverse">
+	      <div class="navbar-inner">
+		      <div class="container">
+			      <!-- <a class="brand" href="#" style="color:#fff;">BitcoinContract.net</a> -->
+			      <ul class="nav pull-right">
+				      
+				      <li><p class="navbar-text">Trustless Bitcoin Escrow System</p></li>
+			      </ul>
+		      </div>
+	      </div>
+      </div>
       <div class="row">
         <div class="span12">
-          <h2>BitcoinContract.net - Trustless Bitcoin Escrows</h2>
-          <p>The <em>only</em> way to do a two-party transaction between untrusted peers (an implementation of <a href="https://en.bitcoin.it/wiki/BIP_0038">BIP38</a>)</p>
+          <h2><a href="http://bitcoincontract.net/">BitcoinContract.net</a></h2><!-- - Trustless Bitcoin Escrows</h2> -->
+          <p>The <em>only</em> <strong>SAFE</strong> way to do a two-party transaction between untrusted peers (an solution using <a href="https://en.bitcoin.it/wiki/BIP_0038">BIP38</a>)</p>
           <div class="alert alert-danger" role="alert">
-	          <strong>BE AWARE!!!</strong> This site is under development and code and layout may change.  What will not change is the code underneath. So if you start a contract with another party, even if the site looks different, the functionality will remain constant and all escrow contracts will proceed without interruption or interference.
+	          <strong>BE AWARE!!!</strong> This site is under development and code and layout may change but the functionality will remain constant and all escrow contracts will proceed without interruption or interference.
           </div>
-          <div class="alert alert-info">This project is a fork of the abandoned old bit2factor.org codebase.  So as the fork moves further from the original codebase, due to the project no longer being maintained, you will discover a very different user experience.</div>
+          
           <div class="accordion" id="compatibilityNotice">
             <div class="accordion-group">
                 <div class="accordion-heading">
@@ -89,7 +99,7 @@
                 </div>
                 <div id="collapseAlert" class="accordion-body collapse">
                     <div class="accordion-inner">
-                        <p>If you encrypted your private key with Safari 6.0.x, due to a bug in the <a href="https://stackoverflow.com/questions/13147026/disabling-jit-in-safari-6-to-workaround-severe-javascript-jit-bugs">Safari 6.0.x JIT engine</a> you may need to access the <a href="git-commit-1825396c333f95422c16a60ce560022ac111449f.html">older version of bit2factor.org</a> in order to properly decrypt your key.</p>
+                        <p>If you encrypted your private key with Safari 6.0.x, due to a bug in the <a href="https://stackoverflow.com/questions/13147026/disabling-jit-in-safari-6-to-workaround-severe-javascript-jit-bugs">Safari 6.0.x JIT engine</a> you may need to use a different browser.</p>
                         <p>It is recommended that you ... </p>
                         <ul>
                           <li><strong>Do not</strong> use Safari 6.0.x</li>
@@ -101,7 +111,7 @@
             </div>
           </div>
           <div class="accordion" id="accordion2">
-            <h3>Trustless Escrow Four Step Process</h3>
+            <h3>Trustless Escrow Easy Four Step Process</h3>
             <div class="accordion-group">
                 <div class="accordion-heading">
 	                
@@ -132,7 +142,11 @@
                           <input id="rec-genint-intermediate" placeholder=" ... not yet generated ... " class="span8" />
                         </div>
                       </div>
-                      <p class="muted">Once you have generated an <strong>Escrow Code</strong>, you can send that generated Escrow Code to the other party and have them visit <a href="http://bitcoincontract.net">BitcoinContract.net</a> and select Step #2.</p>    
+                      <p class="muted">Once you have generated an <strong>Escrow Code</strong>, you can send that generated Escrow Code to the other party and have them visit <a href="http://bitcoincontract.net">BitcoinContract.net</a> and select Step #2.</p> 
+                      <h3>Progress</h3>   
+                      <div class="progress progress-striped active">
+					  	<div class="bar" style="width: 20%;"></div>
+					  </div>
                     </div>
                   </form>
               </div>
@@ -180,6 +194,10 @@
                       </div>
                       <p class="muted">Now that you have the three fields above filed out you will need to save each of these fields.  You should immediately send the <strong>Bitcoin Address</strong> and the <strong>Confirmation Code</strong> to the other party in the contract. The Confirmation Code will allow the other party to verify that everyone has the correct information. This will allow the other party to watch on the <a href="htps://blocktrail.com">Blockchain Explorer</a> and see when the Bitcoins you send will confirm into the generated Bitcoin wallet.</p>
                       <p class="muted"><strong>Do not</strong> give the other party the encrypted key yet, until you are ready to release the Bitcoins due to the fulfillment of the contract from the other party's side.</p>
+                      <h3>Progress</h3>   
+                      <div class="progress progress-striped active">
+					  	<div class="bar" style="width: 40%;"></div>
+					  </div>
                   </form>
                 </div>
               </div>
@@ -217,6 +235,10 @@
                             <button id="rec-vercon-verify" class="btn btn-primary" data-loading-text=" ... Verifying ... ">Verify Confirmation Code</a>
                           </div>
                         <p class="muted">Once the other party receives your product or service they will send you the <strong>Encrypted Private Key</strong>.  At this point you can continue to Step #4.</p>
+                        <h3>Progress</h3>   
+                      <div class="progress progress-striped active">
+					  	<div class="bar" style="width: 70%;"></div>
+					  </div>
                   </form>
                 </div>
               </div>
@@ -263,6 +285,10 @@
                       </div>
                       <p class="muted">Now you can proceed to your regular Bitcoin wallet and import the private key and transfer the Bitcoins that are sitting in the Escrow Bitcoin address.</p>
                       <p class="muted"><strong>** Congratulations on a successful trustless Bitcoin transaction. **</strong></p>
+                      <h3>Progress</h3>   
+                      <div class="progress progress-striped active">
+					  	<div class="bar" style="width: 100%;"></div>
+					  </div>
                   </form>
                 </div>
               </div>
@@ -322,6 +348,7 @@
           <p class="muted">The test suite does take some time to complete so please be patient.</p>
         </div>
       </div>
+      <div class="alert alert-info">This project is a fork of the abandoned old bit2factor.org codebase.  So as the fork moves further from the original codebase, due to the project no longer being maintained, you will discover a very different user experience.</div>
 <!--
       <div class="row">
         <div class="span12">
