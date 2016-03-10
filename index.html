@@ -1,16 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!--
-    Donation Address: 1MnKnd2t7Tfpy1Cs8bm5DraC9HzrHmHoso
-
-    Notice of Copyrights and Licenses:
-    ***********************************
-    The bit2factor.org project, software and embedded resources are copyright bit2factor.org. 
-
-    The individual copyrights are included throughout the document along with their licenses.
-    Included JavaScript libraries are separated with HTML script tags.
-
+    <!---
     Summary of JavaScript functions with a redistributable license:
     
     JavaScript            License
@@ -29,8 +20,7 @@
     *******************   **************
     Boostrap              Apache License
 
-    The bit2factor.org software is available under The MIT License (MIT)
-    Copyright (c) 2013 bit2factor.org
+    The software is available under The MIT License (MIT)
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of this software and 
     associated documentation files (the "Software"), to deal in the Software without restriction, including 
@@ -47,10 +37,9 @@
     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-    GitHub Repository: https://github.com/mannkind/bit2factor.org
     -->
 
-    <title>Two-Factor Bitcoins</title>
+    <title>BitcoinContract.net - Trustless Bitcoin Escrows</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="css/bootstrap.css" rel="stylesheet"></link>
@@ -84,15 +73,13 @@
     <div class="container">
       <div class="row">&nbsp;</div>
       <div class="row">
-          <div class="alert alert-error">
-            <strong>Unmaintained Notice:</strong> The bit2factor.org domain expires 2015-04-05. The source will remain in the current GitHub repo, but the code nor the site wil be maintained.
-          </div>
-      </div>
-      <div class="row">
         <div class="span12">
-          <h2>Two-Factor Bitcoin</h2>
+          <h2>BitcoinContract.net - Trustless Bitcoin Escrows</h2>
           <p>The <em>only</em> way to do a two-party transaction between untrusted peers (an implementation of <a href="https://en.bitcoin.it/wiki/BIP_0038">BIP38</a>)</p>
-          <p>If you're looking for to do Bitcoin Escrow, checkout <a href="http://www.bitescrow.org">bitescrow.org</a></p>
+          <div class="alert alert-danger" role="alert">
+	          <strong>BE AWARE!!!</strong> This site is under development and code and layout may change.  What will not change is the code underneath. So if you start a contract with another party, even if the site looks different, the functionality will remain constant.
+          </div>
+          <div class="alert alert-info">This project is a fork of the abandoned old bit2factor.org codebase.  So as the fork moves further from the original codebase you will discover a very different user experience.</div>
           <div class="accordion" id="compatibilityNotice">
             <div class="accordion-group">
                 <div class="accordion-heading">
@@ -114,17 +101,20 @@
             </div>
           </div>
           <div class="accordion" id="accordion2">
-            <h3>Two-Party Escrow</h3>
+            <h3>Trustless Escrow Four Step Process</h3>
             <div class="accordion-group">
                 <div class="accordion-heading">
+	                
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                      Generate Intermediate Code
+                      <h2><strong>Step #1</strong> - Initiate the Escrow Process <small><em>(This step to be completed by Bitcoin RECEIVER)</em></small></h2>
                     </a>
+
                 </div>
                 <div id="collapseOne" class="accordion-body collapse in">
                     <div class="accordion-inner">
-                      <p>An intermediate code allows the other party to generate an encrypted private key based on your passphrase without them actually knowing the passphrase.</p>
-                      <p>Typically the person receiving the coins is the person to generate the intermediate code.</p>
+	                    <p>The person who will be receiving the Bitcoin payment should create a unique passphrase that ONLY YOU, the receiver of the payment, should be in possession. This passphrase is used to generate an encrypted private key that the sender of the Bitcoins will not have access.</p>
+	                    <p><strong>IMPORTANT!</strong> - You will need to remember the passphrase you use because this passphrase is the ONLY way you can verify the transaction is confirmed as well as the ONLY way to withdraw the Bitcoins out of the escrow wallet.</p>
+                      
                       <br />
                       <form class="form-horizontal">
                       <div class="control-group">
@@ -134,15 +124,15 @@
                         </div>
                       </div>
                       <div class="form-actions">
-                        <button id="rec-genint-gen" class="btn btn-primary" data-loading-text=" ... Generating ... ">Generate Intermediate Code</a>
+                        <button id="rec-genint-gen" class="btn btn-primary" data-loading-text=" ... Generating ... ">Generate Escrow Code</a>
                       </div>
                       <div class="control-group">
-                        <label class="control-label" for="rec-genint-intermediate">Intermediate Code</label>
+                        <label class="control-label" for="rec-genint-intermediate">Escrow Code</label>
                         <div class="controls">
                           <input id="rec-genint-intermediate" placeholder=" ... not yet generated ... " class="span8" />
                         </div>
                       </div>
-                      <p class="muted">Provide the other party the intermediate code once it has been generated.</p>    
+                      <p class="muted">Once you have generated an <strong>Escrow Code</strong>, you can send that code to the other party and have them visit <a href="http://bitcoincontract.net">BitcoinContract.net</a> and select Step #2.</p>    
                     </div>
                   </form>
               </div>
@@ -151,19 +141,20 @@
 
             <div class="accordion-group">
                 <div class="accordion-heading">
+	                
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                      Generate Address, Confirmation Code &amp; Private Key
+                      <h2><strong>Step #2</strong> - Setup Bitcoin Address for Transaction <small><em>(This step completed by bitcoin SENDER)</em></small></h2>
                     </a>
                 </div>
                 <div id="collapseTwo" class="accordion-body collapse">
                     <div class="accordion-inner">
-                      <p>Generate the encrypted private key using the intermediate code that you were given by the other party.</p>
-                      <p>You will <strong>lose access to the coins</strong> unless the other party provides you with the passphrase to the encrypted private key.</p>
+	                    <p>You should have received an <strong>Escrow Code</strong> from the other party in the contract. You need to copy/paste that code EXACTLY as you received from the other party. Press the "Generate All" button and wait for the three fields below to be generated.</p>
+		                    
                       <form class="form-horizontal">
                       <div class="control-group">
-                        <label class="control-label" for="send-gencon-intermediate">Intermediate Code</label>
+                        <label class="control-label" for="send-gencon-intermediate">Escrow Code</label>
                         <div class="controls">
-                          <input id="send-gencon-intermediate" placeholder=" Enter the intermediate code" class="span8" />
+                          <input id="send-gencon-intermediate" placeholder=" Enter the Escrow Code" class="span8" />
                         </div>
                       </div>
                           <div class="form-actions">
@@ -187,8 +178,8 @@
                           <input id="send-gencon-privatekey" placeholder=" ... not yet generated ... " class="span8" />
                         </div>
                       </div>
-                      <p class="muted">Provide the address and confirmation code to the other party once they have been generated. Once the other party had verified the address using the confirmation code, you can send the coins to the address without fear of the other party getting access to the coins before the trade is complete.</p>
-                      <p class="muted"><strong>Do not</strong> give the other party the encrypted key until you are ready to release the coins.</p>
+                      <p class="muted">Now that you have the three fields above filed out you will need to save each of these fields.  You should immediately send the <strong>Bitcoin Address</strong> and the <strong>Confirmation Code</strong> to the other party in the contract. The Confirmation Code will allow the other party to verify that everyone has the correct information. This will allow the other party to watch on the <a href="htps://blocktrail.com">Blockchain Explorer</a> and see when the Bitcoins you send will confirm into the generated Bitcoin wallet.</p>
+                      <p class="muted"><strong>Do not</strong> give the other party the encrypted key yet, until you are ready to release the Bitcoins due to the fulfillment of the contract from the other party's side.</p>
                   </form>
                 </div>
               </div>
@@ -197,12 +188,14 @@
 
             <div class="accordion-group">
                 <div class="accordion-heading">
+	                
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                      Verify Confirmation Code
+                      <h2><strong>Step #3</strong> - Verify Bitcoin Has Been Sent <small><em>(This step to be used by Bitcoin RECEIVER)</em></small></h2>
                     </a>
                 </div>
                 <div id="collapseThree" class="accordion-body collapse">
                     <div class="accordion-inner">
+	                    <p>At this point the sender of the Bitcoins will have given you a <strong>Confirmation Code</strong> and a <strong>Bitcoin Address</strong>.  You will use the Confirmation Code along with the original passphrase you created during Step #1 to verify that everything is properly in order.  You can now watch on the <a href="htps://blocktrail.com">Blockchain Explorer</a> to see when the Bitcoins confirm to the escrow wallet. (This is done by putting the Escrow Bitcoin Address in a Blockchain explorer search box.).
                       <p>Use your original passphrase and the confirmation code provided by the other party to verify that the address generated was based on your passphrase.</p>
                       <p>Once verified, the other party can send coins to the address. You will not have access to the coins until the other party sends you the encrypted private key.</p>
                       <form class="form-horizontal">
@@ -221,6 +214,7 @@
                           <div class="form-actions">
                             <button id="rec-vercon-verify" class="btn btn-primary" data-loading-text=" ... Verifying ... ">Verify Confirmation Code</a>
                           </div>
+                        <p class="muted">Once the other party receives your product or service they will send you the <strong>Encrypted Private Key</strong>.  At this point you can continue to Step #4.</p>
                   </form>
                 </div>
               </div>
@@ -229,13 +223,14 @@
 
             <div class="accordion-group">
                 <div class="accordion-heading">
+	                
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
-                      Decrypt Private Key
+                      <h2><strong>Step #4</strong> - Transfer Bitcoin Out of Escrow <small><em>(This step to be used by Bitcoin RECEIVER)</em></small></h2>
                     </a>
                 </div>
                 <div id="collapseFour" class="accordion-body collapse">
                     <div class="accordion-inner">
-                      <p>Decrypt an encrypted private key using a passphrase.</p>
+                      <p>Finally, using the initial passphrase from Step #1 and the Encrypted Private Key the other party in the transaction sent you you can decrypt the private key of the Escrow Bitcoin address.</p>
                       <form class="form-horizontal">
                       <div class="control-group">
                         <label class="control-label" for="rec-decenc-passphrase">Passphrase</label>
@@ -264,6 +259,8 @@
                           <input autocomplete="off" id="rec-decenc-wif" placeholder=" ... not yet decrypted ... " class="span8" />
                         </div>
                       </div>
+                      <p class="muted">Now you can proceed to your regular Bitcoin wallet and import the private key and transfer the Bitcoins that are sitting in the Escrow Bitcoin address.</p>
+                      <p class="muted"><strong>** Congratulations on a successful trustless Bitcoin transaction. **</strong></p>
                   </form>
                 </div>
               </div>
@@ -275,7 +272,7 @@
             <div class="accordion-group">
                 <div class="accordion-heading">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
-                      Generate &amp; Encrypt Private Key 
+                      <h5>Generate &amp; Encrypt Private Key - <small>(For when you want a simple method of encrypted and decrypting Bitcoin private keys according to BIB38.)</small></h5>
                     </a>
                 </div>
                 <div id="collapseFive" class="accordion-body collapse">
@@ -323,7 +320,7 @@
           <p class="muted">The test suite does take some time to complete so please be patient.</p>
         </div>
       </div>
-
+<!--
       <div class="row">
         <div class="span12">
           <hr />
@@ -334,7 +331,8 @@
           </small></p>
         </div>
       </div>
-    </div>
+--!> 
+   </div>
 
     <div id="rec-vercon-modal" class="modal hide fade">
       <div class="modal-header">
