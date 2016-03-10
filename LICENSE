@@ -1,5 +1,3 @@
-The bit2factor.org project, software and embedded resources are copyright bit2factor.org. 
-
 The individual copyrights are included throughout the document along with their licenses.
 Included JavaScript libraries are separated with HTML script tags.
 
@@ -21,9 +19,10 @@ Framework             License
 *******************   **************
 Boostrap              Apache License
 
-The bit2factor.org software is available under The MIT License (MIT)
+The software is available under The MIT License (MIT)
 
-Copyright (c) 2013 Dustin Brewer <mannkind@thenullpointer.net>
+Original copyright (c) 2013 Dustin Brewer <mannkind@thenullpointer.net>
+Additional work copyright (c) 2016 Benjamin Bradley <benjamin@wpstudio.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
